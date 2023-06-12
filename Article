@@ -1,0 +1,24 @@
+# article
+import wikipediaapi
+import json
+#define list of articles
+articles = ['a','b','c']
+
+#create a Wikipedia object
+wiki = wikipediaapi.Wikipedia('en')
+
+#get Wikipedia articles and save them in text files
+for article_title in articles:
+    page = wiki.page(article_title)
+    if page.exists():
+        article_text = page.text
+        with open(f"{article_title}.txt", "w", encoding="utf-8") as f:
+            f.write(article_text)
+        print(f,"The article '{article_title}' downloaded successfully.")
+    else:
+        print(f,"The article '{article_title}' does not exist.")
+
+#opening Json and analyzing it
+with open("data.json",'r') as f:
+    data = json.load(f)
+    print(data)
