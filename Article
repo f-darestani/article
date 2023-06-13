@@ -5,7 +5,7 @@ import json
 articles = ['a','b','c']
 
 #create a Wikipedia object
-wiki = wikipediaapi.Wikipedia('en')
+wiki = wikipediaapi.Wikipedia('fa')
 
 #get Wikipedia articles and save them in text files
 for article_title in articles:
